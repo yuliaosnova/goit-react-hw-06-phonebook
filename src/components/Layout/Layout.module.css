@@ -1,0 +1,57 @@
+.Layout{
+	width: 100%;
+	margin: 0 auto;
+	padding: 0px 5px;
+}
+
+.Header {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	
+	background-color: #B1D4E0;
+	width: 100%;
+	height: 65px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10
+}
+
+.Title {
+	color: #2E8BC0;
+}
+
+.AddBtn {
+	/* margin-right: 30px; */
+
+	font-size: 14px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	padding: 24px 16px;
+
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	
+	background-color: #2E8BC0;
+
+	border: none;
+
+	color: #B1D4E0;
+  
+  text-transform: uppercase;
+	
+}
+
+
+.AddBtn:hover {
+	background-color: #145DA0;
+}
+

@@ -17,7 +17,9 @@ const ContactList = () => {
   //   console.log ('filtereD', filteredContacts);
 
   return (
-    <ul className={css.list}>
+	<>
+	<h2>Contacts</h2>
+	<ul className={css.list}>
       {filteredContacts.map(item => (
         <li key={item.id} className={css.item}>
           <span className="name">{item.name}: </span>
@@ -28,6 +30,8 @@ const ContactList = () => {
         </li>
       ))}
     </ul>
+	</>
+    
   );
 };
 

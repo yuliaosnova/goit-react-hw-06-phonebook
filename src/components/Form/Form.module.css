@@ -1,22 +1,89 @@
-.form {
+
+:root {
+	--body-bck-clr: rgb(220, 220, 220);
+	--main-lght-clr: rgb(255, 248, 220);
+	--main-bck-color: rgba(70, 130, 180, 0.3);
+	--accent-color: rgb(106, 90, 205);
+	--add-accent-clr: rgb(25, 25, 112);
+	--add-color: rgb(95, 158, 160);
+
+	--form-valid-color: rgb(0, 250, 154);
+	--form-invalid-color: rgb(255, 64, 64);
+
+	--animation-cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	--animation-default: 400ms;
+}
+
+/* body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+
+	background-color: var(--body-bck-clr);
+} */
+
+.FeedbackForm {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 
-	width: 300px;
-	height: 200px;
+	padding: 12px;
 
-	gap: 10px;
-	border: 2px solid black;
+	width: 500px;
+	border: 3px solid #145DA0;
+	border-radius: 4px;
+
+	background-color: #B1D4E0;
+	border-image: linear-gradient(45deg, #0e8c82, #145DA0);
+	border-image-slice: 1;
+}
+
+.FeedbackForm label {
+	/* display: flex; */
+	flex-direction: column;
+	margin-bottom: 8px;
+	position: relative;
+
+	border: none;
+	outline: none;
+
+	color: #0C2D48;
+}
+
+.InputForm {
+	padding: 20px 10px 10px 10px;
+	margin-bottom: 18px;
+
+	font-size: inherit;
+	font-weight: inherit;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+
+	color: var(--accent-color);
+}
+
+
+.ButtonSubmit {
+	display: block;
+	padding: 20px 30px;
+	/* position: relative; */
 
 	margin-left: auto;
 	margin-right: auto;
-	
-}
 
-.btn {
-	background-color: rgb(225, 223, 228);
-	border: 1px solid gray;
-	border-radius: 10%;
+	color: #0C2D48;
+	font-size: 14px;
+	
+
+	width: 200px;
+	/* text-decoration: none; */
+	overflow: hidden;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
 }

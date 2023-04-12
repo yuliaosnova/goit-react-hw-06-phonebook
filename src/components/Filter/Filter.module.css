@@ -1,16 +1,42 @@
-.list {
-	display: flex;
-	flex-direction: column;
-	align-items:  flex-start;
-	justify-content: center;
-	width: 300px;
-	
-	gap: 10px;
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
-	margin-left: auto;
-	margin-right: auto;
+.SearchBar {
+	display: flex;
+
+}
+.SearchInput {
+  padding: 10px;
+  width: 250px;
+  border: solid #c8ccd0 1px;
+  border-radius: 5px 0px 0px 5px;
+  -webkit-transition: box-shadow linear 0.2s;
+  transition: box-shadow linear 0.2s, width 500ms ease;
 }
 
-/* .label {
-	font-weight: 500;
-} */
+.SearchInput:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  width: 280px;
+}
+
+.SearchInput:hover {
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  width: 280px;
+}
+
+.SearchButton {
+  height: 38px;
+  margin-left: -2px;
+  width: 40px;
+  border: solid #c8ccd0 1px;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 0;
+  transition: 400ms ease-out;
+}
+
+.SearchButton:hover {
+  background-color: hsl(0, 0%, 85%);
+}
+

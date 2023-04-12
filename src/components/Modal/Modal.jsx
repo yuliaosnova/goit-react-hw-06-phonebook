@@ -1,40 +1,42 @@
-
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import css from './Modal.module.css';
+import { useDispatch } from 'react-redux';
+import { setShowModal } from 'redux/showModalSlice';
 
 const modalRoot = document.querySelector('#modal-root');
 
-class Modal extends Component {
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
-  }
+function Modal({ children }) {
+  const dispatch = useDispatch();
 
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown);
-  }
+  useEffect(() => {
+    // console.log("Mounting phase: same when componentDidMount runs");
+    window.addEventListener('keydown', handleKeyDown);
 
-  handleKeyDown = e => {
+    return () => {
+      //   console.log("Unmounting phase: same when componentWillUnmount runs");
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const handleKeyDown = e => {
     if (e.code === 'Escape') {
-      this.props.onClose();
+      dispatch(setShowModal());
     }
   };
 
-  handleBackdropClick = event => {
+  const handleBackdropClick = event => {
     if (event.currentTarget === event.target) {
-      this.props.onClose();
+      dispatch(setShowModal());
     }
   };
 
-  render() {
-    return createPortal(
-      <div className={css.Overlay} onClick={this.handleBackdropClick}>
-        <div className={css.Modal}>{this.props.children}</div>
-      </div>,
-      modalRoot
-    );
-  }
+  return createPortal(
+    <div className={css.Overlay} onClick={handleBackdropClick}>
+      <div className={css.Modal}>{children}</div>
+    </div>,
+    modalRoot
+  );
 }
-
 
 export default Modal;

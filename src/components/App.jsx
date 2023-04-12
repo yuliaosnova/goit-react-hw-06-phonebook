@@ -1,32 +1,22 @@
 import Form from './Form/Form';
 import ContactList from './ContactList/ContactsList';
-// import css from './App.module.css';
 import { Layout } from './Layout/Layout';
-import { useState } from 'react';
 import Modal from './Modal/Modal';
 import { useSelector } from 'react-redux';
 
-
 export default function App() {
-	const [showModal, setShowModal] = useState(false);
-	const contacts = useSelector(state => state.contacts);
-	
-	
-	const toggleModal = () => {
-		setShowModal(() => !showModal);
-	 };
+  const contacts = useSelector(state => state.contacts);
+  const showModal = useSelector(state => state.showModal);
+
   return (
     <>
-	 <Layout toggleModal={toggleModal} />
-	 {showModal && (
-        <Modal onClose={toggleModal}>
+      <Layout />
+      {showModal && (
+        <Modal>
           <Form />
         </Modal>
       )}
-      
-      
 
-      
       {contacts.length > 0 && <ContactList />}
     </>
   );

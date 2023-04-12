@@ -1,12 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
-
 .SearchBar {
-	display: flex;
-
+  display: flex;
 }
 .SearchInput {
   padding: 10px;
-  width: 250px;
+  max-width: 250px;
   border: solid #c8ccd0 1px;
   border-radius: 5px 0px 0px 5px;
   -webkit-transition: box-shadow linear 0.2s;
@@ -31,12 +28,12 @@
   margin-left: -2px;
   width: 40px;
   border: solid #c8ccd0 1px;
+  background-color: #f6e1db;
   border-radius: 0px 5px 5px 0px;
   border-left: 0;
   transition: 400ms ease-out;
 }
 
 .SearchButton:hover {
-  background-color: hsl(0, 0%, 85%);
+  background-color: hsl(19, 54%, 58%);
 }
-

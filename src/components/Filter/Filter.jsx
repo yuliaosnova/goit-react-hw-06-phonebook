@@ -16,22 +16,18 @@ const Filter = () => {
   };
 
   return (
-
-	<div className={css.SearchBar}>
-          <input
-            type="text"
-            placeholder="Find contact"
-            name="search"
-            className={css.SearchInput}
-				onChange={setFilter}
-          />
-          <button type="submit" className={css.SearchButton}><BsSearch /></button>
-        </div>
-
-   //  <div className={css.list}>
-   //    <label className={css.label}>Find contacts by name</label>
-   //    <input type="text" onChange={setFilter} />
-   //  </div>
+    <div className={css.SearchBar}>
+      <input
+        type="text"
+        placeholder="Find contact"
+        name="search"
+        className={css.SearchInput}
+        onChange={setFilter}
+      />
+      <button type="submit" className={css.SearchButton}>
+        <BsSearch />
+      </button>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 .list {
 	display: flex;
 	flex-wrap: wrap;
+	color: #6e5f77;
 	
 	align-items:  flex-start;
 	justify-content: center;
@@ -11,18 +12,26 @@
 	margin-right: auto;
 	
 }
-
+.title {
+	color: #857291;
+	text-align: center;
+}
 .btn {
-	margin-left: 8px;
-	background-color: rgb(225, 223, 228);
-	width: 15px;
-	height: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 50px;
+
+	color: #6e5f77;
+	
+	width: 150px;
+	height: 40px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	background-color: rgb(225, 223, 228);
-	border: 1px solid gray;
-	border-radius: 20%;
+	border-radius: 5px;
+	
+	border: none;
+
 }
 
 .item {
@@ -32,9 +41,8 @@
 	flex-direction: column;
 	width: 180px;
 	height: 200px;
-	background-color: rgb(229, 229, 69);
+	background-color: #F6E1DB;
 	border-radius: 10px;
 	padding: 20px;
 	overflow: hidden;
-
 }

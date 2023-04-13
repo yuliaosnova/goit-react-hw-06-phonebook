@@ -17,6 +17,7 @@ function Modal({ children }) {
       //   console.log("Unmounting phase: same when componentWillUnmount runs");
       window.removeEventListener('keydown', handleKeyDown);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleKeyDown = e => {

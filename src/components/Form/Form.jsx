@@ -39,7 +39,6 @@ export default function Form() {
     } else {
       dispatch(add({ name, number, id: nanoid() }));
     }
-	//  dispatch(add({ name, number, id: nanoid() }));
 
     reset();
   };

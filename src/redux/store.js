@@ -18,43 +18,25 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['contacts']
+  whitelist: ['contacts'],
 };
 
-// const persistedContactstReducer = persistReducer(
-//   persistConfig,
-//   contactsReducer
-// );
-
 const rootReducer = combineReducers({
-	contacts: contactsReducer,
-	filter: filterReducer,
-	showModal: modalReducer,
-})
+  contacts: contactsReducer,
+  filter: filterReducer,
+  showModal: modalReducer,
+});
 
-const persistedReduser = persistReducer (persistConfig, rootReducer)
+const persistedReduser = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReduser,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({
-        serializableCheck: {
-          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-        },
-      }),
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);
-
-// import { configureStore } from '@reduxjs/toolkit';
-// import { contactsReducer } from './contactsSlice';
-// import { filterReducer } from './filterSlice';
-// import { modalReducer } from './showModalSlice';
-
-// export const store = configureStore({
-//   reducer: {
-//     contacts: contactsReducer,
-//     filter: filterReducer,
-//     showModal: modalReducer,
-//   },
-// });

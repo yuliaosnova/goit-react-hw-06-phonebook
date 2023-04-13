@@ -2,7 +2,10 @@ import { useState } from 'react';
 import css from './Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from 'redux/contactsSlice';
+import { setShowModal } from 'redux/showModalSlice';
 import { nanoid } from 'nanoid';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 export default function Form() {
@@ -11,6 +14,8 @@ export default function Form() {
 
   const contacts = useSelector(state => state.contacts);
   console.log (contacts);
+
+  const notify = (message) => toast(message);
 
 
   const dispatch = useDispatch();
@@ -35,9 +40,12 @@ export default function Form() {
 
     const check = contacts.find(contact => contact.name === name);
     if (check) {
-      alert(`${name} is already in contacts`);
+      // alert(`${name} is already in contacts`);
+		notify(`${name} is already in contacts`);
+		
     } else {
       dispatch(add({ name, number, id: nanoid() }));
+		dispatch(setShowModal())
     }
 
     reset();
@@ -78,6 +86,7 @@ export default function Form() {
       <button type="submit" className={css.ButtonSubmit}>
         Add contact
       </button>
+		<ToastContainer />
     </form>
   );
 }

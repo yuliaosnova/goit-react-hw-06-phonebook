@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { add } from 'redux/contactsSlice';
 import { nanoid } from 'nanoid';
 
+
 export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
   const contacts = useSelector(state => state.contacts);
-  //   console.log('contacts', contacts);
+  console.log (contacts);
+
 
   const dispatch = useDispatch();
 
@@ -37,6 +39,7 @@ export default function Form() {
     } else {
       dispatch(add({ name, number, id: nanoid() }));
     }
+	//  dispatch(add({ name, number, id: nanoid() }));
 
     reset();
   };
